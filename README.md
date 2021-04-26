@@ -26,6 +26,7 @@ On-the-Job Ticket:
         THEN I am again presented with current and future conditions for that city
 
 Edits Made:
+    
     HTML
         CREATED framework
         CREATED sections for search, search history, current weather, and the 5-day forecast
