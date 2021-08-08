@@ -32,9 +32,9 @@
                                     <h3>Search for a City:</h3>
 
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" id="search-city" aria-label="City Search" aria-describedby="search-button">
+                                        <input type="text" class="form-control" id="search-city" aria-label="City Search" aria-describedby="search-button" placeholder="San Diego">
                                         <div class="input-group-append">
-                                            <button class="btn btn-primary" id="search-button">Search</button>
+                                            <button type="submit" class="btn btn-primary" id="search-btn">Search</button>
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +42,6 @@
 
                             <!-- search history starts -->
                                 <div class="history">
-                                    <button class="btn btn-secondary" type="button" id="clear-history">Clear history</button>
-
                                     <ul class="list-group"></ul>
                                 </div>
                             <!-- search history ends -->
@@ -55,7 +53,8 @@
                             <div class="row ml-2 current-weather">
                                 <div class="col-sm-12" id="current-weather">
                                     <h3 class="city-name mb-1 mt-2 bolder" id="current-city"></h3>
-                                    <p>Temp: <span class="current" id="temperature"></span></p>
+                                    <img id="current-img">
+                                    <p>Temp: <span class="current" id="temp"></span></p>
                                     <p>Wind: <span class="current" id="wind-speed"></span></p>
                                     <p>Humidity: <span class="current" id="humidity"></span></p> 
                                     <p>UV Index: <span class="current bg-danger rounded py-2 px-2 text-white" id="uv-index"></span></p> 
@@ -69,47 +68,47 @@
                                     <div class="row days">
                                         <!-- day 0 -->
                                         <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2">
-                                            <p><strong id="fDate0"></strong></p>
-                                            <p id="fImg0"></p>
-                                            <p>Temp: <span id="fTemp0"></span></p>
-                                            <p>Wind: <span id="fWind0"></span></p>
-                                            <p>Humidity: <span id="fHumidity0"></span></p>
+                                            <p><strong id="date0"></strong></p>
+                                            <img id="img0">
+                                            <p>Temp: <span id="temp0"></span></p>
+                                            <p>Wind: <span id="wind0"></span></p>
+                                            <p>Humidity: <span id="humidity0"></span></p>
                                         </div>
 
                                         <!-- day 1 -->
                                         <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2">
-                                            <p><strong id="fDate1"></strong></p>
-                                            <p id="fImg1"></p>
-                                            <p>Temp: <span id="fTemp1"></span></p>
-                                            <p>Wind: <span id="fWind1"></span></p>
-                                            <p>Humidity: <span id="fHumidity1"></span></p>
+                                            <p><strong id="date1"></strong></p>
+                                            <img id="img1">
+                                            <p>Temp: <span id="temp1"></span></p>
+                                            <p>Wind: <span id="wind1"></span></p>
+                                            <p>Humidity: <span id="humidity1"></span></p>
                                         </div>
 
                                         <!-- day 2 -->
                                         <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2">
-                                            <p><strong id="fDate2"></strong></p>
-                                            <p id="fImg2"></p>
-                                            <p>Temp: <span id="fTemp2"></span></p>
-                                            <p>Wind: <span id="fWind2"></span></p>
-                                            <p>Humidity: <span id="fHumidity2"></span></p>
+                                            <p><strong id="date2"></strong></p>
+                                            <img id="img2">
+                                            <p>Temp: <span id="temp2"></span></p>
+                                            <p>Wind: <span id="wind2"></span></p>
+                                            <p>Humidity: <span id="humidity2"></span></p>
                                         </div>
 
                                         <!-- day 3 -->
                                         <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2">
-                                            <p><strong id="fDate3"></strong></p>
-                                            <p id="fImg3"></p>
-                                            <p>Temp: <span id="fTemp3"></span></p>
-                                            <p>Wind: <span id="fWind3"></span></p>
-                                            <p>Humidity: <span id="fHumidity3"></span></p>
+                                            <p><strong id="date3"></strong></p>
+                                            <p id="img3">
+                                            <p>Temp: <span id="temp3"></span></p>
+                                            <p>Wind: <span id="wind3"></span></p>
+                                            <p>Humidity: <span id="humidity3"></span></p>
                                         </div>
 
                                         <!-- day 4 -->
                                         <div class="col-sm-2 forecast ml-2 mb-3 p-2 mt-2">
-                                            <p><strong id="fDate4"></strong></p>
-                                            <p id="fImg4"></p>
-                                            <p>Temp: <span id="fTemp4"></span></p>
-                                            <p>Wind: <span id="fWind4"></span></p>
-                                            <p>Humidity: <span id="fHumidity4"></span></p>
+                                            <p><strong id="date4"></strong></p>
+                                            <img id="img4">
+                                            <p>Temp: <span id="temp4"></span></p>
+                                            <p>Wind: <span id="wind4"></span></p>
+                                            <p>Humidity: <span id="humidity4"></span></p>
                                         </div>
                                     </div>
 
@@ -123,8 +122,7 @@
 
         <!-- js starts -->
             <!-- jQuery -->
-                <script src="https://code.jquery.com/jquery.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
             <!-- js docs -->
                 <script src="./assets/js/script.js"></script>
         <!-- js ends -->
