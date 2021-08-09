@@ -40,3 +40,5 @@ Edits Made:
         CREATED functions to search for city
         CREATED functions to log, clear, and action functions for search history
         CREATED functions to search and display the current and 5-day forecast weather, as well as the date that belongs to them. Weather includes temp, wind speed, humidity, and the UV index.
+        
+![screenshot-weather](https://user-images.githubusercontent.com/79028196/128650504-143fa934-51c9-48ac-9073-c98e25a063ad.png)
